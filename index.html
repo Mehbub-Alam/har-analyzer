@@ -6,86 +6,269 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Har File nalyzer</title>
+  <title>Har File Analyzer</title>
 </head>
 
 <body>
   <div class="wrapper">
-    <img src="NextEra_Energy_logo.svg" alt="" srcset="" id="logo">
-    <h1>HAR File Analyzer</h1>
-    <div class="form">
-      <label for="harFileInput" class="custom-file-upload">
-        Upload HAR File
-        <input type="file" id="harFileInput" accept=".har" />
-    </div>
-    <h6 id="selected-file">No File selected</h6>
-    <div class="display-button">
-      
-    </div>
 
-    <div class="display-data">
-      <button id="btn-unique-domain" onclick="copyUrls()" disabled>Unique Domains</button>
-      <div id="uniqueUrlsBox">
+    <div class="mid-container">
+      <div class="header-container">
+        <div class="svg-top-left">
+          <svg id="svg-left-top" style="display: none;"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
 
+                .cls-2 {
+                  fill: #6c63ff;
+                }
+              </style>
+            </defs>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="turbine">
+                <polygon id="bar" class="cls-1"
+                  points="108.08 555.1 84.42 555.1 91.94 117.59 100.56 117.59 108.08 555.1" />
+                <g id="blade">
+                  <circle class="cls-2" cx="96.58" cy="114.4" r="5.75" />
+                  <path class="cls-1"
+                    d="M104.93,82.41c-.56,3-2.41,9.36-8.39,9.18a8.38,8.38,0,0,1-8-8.67l1.72-62.13L90.83.53s3-5.61,5.89,19.52v.1l8.16,59.57A6,6,0,0,1,104.93,82.41Z" />
+                  <path class="cls-2" d="M100.94,94.09v13.17H92.18V94.37A11.47,11.47,0,0,1,100.94,94.09Z" />
+                  <path class="cls-2" d="M96.81,20.19a7.53,7.53,0,0,0-6.49.65L90.88.58s3-5.61,5.89,19.52Z" />
+                  <path class="cls-1"
+                    d="M64.83,123.25c2.87-1,9.27-2.6,12.14,2.64a8.34,8.34,0,0,1-3.52,11.22L18.79,166.69.94,176.33s-6.35.24,14-14.88l.09,0,47.52-36.86A8.66,8.66,0,0,1,64.83,123.25Z" />
+                  <path class="cls-2" d="M76.88,120.89l11.4-6.59,4.41,7.61-11.17,6.44A12,12,0,0,1,76.88,120.89Z" />
+                  <path class="cls-2" d="M15,161.41a7.43,7.43,0,0,0,3.8,5.28L.94,176.33s-6.35.24,14-14.88Z" />
+                  <path class="cls-1"
+                    d="M120.23,137.58c-2.32-2-6.91-6.77-3.76-11.87a8.34,8.34,0,0,1,11.5-2.55l52.94,32.54,17.25,10.62s3.38,5.38-19.84-4.64l-.1,0-55.68-22.72A7.67,7.67,0,0,1,120.23,137.58Z" />
+                  <path class="cls-2" d="M112.16,128.3l-11.4-6.58,4.4-7.6,11.17,6.44A11.88,11.88,0,0,1,112.16,128.3Z" />
+                  <path class="cls-2" d="M178.18,161.68a7.47,7.47,0,0,0,2.69-5.93l17.24,10.62s3.39,5.37-19.84-4.64Z" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="display-header">
+          <img src="NextEra_Energy_logo.svg" alt="" srcset="" id="logo">
+          <h1>HAR File Analyzer</h1>
+          <div class="form">
+            <label for="harFileInput" class="custom-file-upload">
+              Upload HAR File
+              <input type="file" id="harFileInput" accept=".har" />
+          </div>
+          <h6 id="selected-file">No File selected</h6>
+          <button id="btn-unique-domain" onclick="copyUrls()" disabled>Unique Domains</button>
+          <div id="uniqueUrlsBox">
+
+          </div>
+        </div>
+        <div class="svg-top-right" >
+          <svg id="svg-right-top" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+
+                .cls-2 {
+                  fill: #6c63ff;
+                }
+              </style>
+            </defs>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="turbine">
+                <polygon id="bar" class="cls-1"
+                  points="108.08 555.1 84.42 555.1 91.94 117.59 100.56 117.59 108.08 555.1" />
+                <g id="blade">
+                  <circle class="cls-2" cx="96.58" cy="114.4" r="5.75" />
+                  <path class="cls-1"
+                    d="M104.93,82.41c-.56,3-2.41,9.36-8.39,9.18a8.38,8.38,0,0,1-8-8.67l1.72-62.13L90.83.53s3-5.61,5.89,19.52v.1l8.16,59.57A6,6,0,0,1,104.93,82.41Z" />
+                  <path class="cls-2" d="M100.94,94.09v13.17H92.18V94.37A11.47,11.47,0,0,1,100.94,94.09Z" />
+                  <path class="cls-2" d="M96.81,20.19a7.53,7.53,0,0,0-6.49.65L90.88.58s3-5.61,5.89,19.52Z" />
+                  <path class="cls-1"
+                    d="M64.83,123.25c2.87-1,9.27-2.6,12.14,2.64a8.34,8.34,0,0,1-3.52,11.22L18.79,166.69.94,176.33s-6.35.24,14-14.88l.09,0,47.52-36.86A8.66,8.66,0,0,1,64.83,123.25Z" />
+                  <path class="cls-2" d="M76.88,120.89l11.4-6.59,4.41,7.61-11.17,6.44A12,12,0,0,1,76.88,120.89Z" />
+                  <path class="cls-2" d="M15,161.41a7.43,7.43,0,0,0,3.8,5.28L.94,176.33s-6.35.24,14-14.88Z" />
+                  <path class="cls-1"
+                    d="M120.23,137.58c-2.32-2-6.91-6.77-3.76-11.87a8.34,8.34,0,0,1,11.5-2.55l52.94,32.54,17.25,10.62s3.38,5.38-19.84-4.64l-.1,0-55.68-22.72A7.67,7.67,0,0,1,120.23,137.58Z" />
+                  <path class="cls-2" d="M112.16,128.3l-11.4-6.58,4.4-7.6,11.17,6.44A11.88,11.88,0,0,1,112.16,128.3Z" />
+                  <path class="cls-2" d="M178.18,161.68a7.47,7.47,0,0,0,2.69-5.93l17.24,10.62s3.39,5.37-19.84-4.64Z" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
-      <div id="display-table" class="display-table" style="margin-top: 2rem; display: none;">
-        <table id="myTable" class="display">
-          <thead>
-            <tr>
-              <th>URL</th>
-              <th>Response Code</th>
-              <th>Method</th>
-              <th>Remote Address</th>
-              <th>Time</th>
-              <th>protocol</th>
-              <!-- <th>Referer</th> -->
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>google.com</td>
-              <td>200</td>
-              <td>GET</td>
-              <td>8.8.8.8</td>
-              <td>20ms</td>
-              <td>HTTP 1.1</td>
-            </tr>
-            <tr>
-              <td>Yahoo.com</td>
-              <td>200</td>
-              <td>GET</td>
-              <td>8.8.8.8</td>
-              <td>20ms</td>
-              <td>HTTP 1.1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
 
-        <div class="modal-bg">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              
-              <span class="close">&times;</span>
-            </div>
+      <div class="display-data">
+        <div id="display-table" class="display-table" style="margin-top: 2rem; display: none">
+          <table id="myTable" class="display">
+            <thead>
+              <tr>
+                <th>URL</th>
+                <th>Response Code</th>
+                <th>Method</th>
+                <th>Remote Address</th>
+                <th>Time</th>
+                <th>protocol</th>
+                <!-- <th>Referer</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>google.com</td>
+                <td>200</td>
+                <td>GET</td>
+                <td>8.8.8.8</td>
+                <td>20ms</td>
+                <td>HTTP 1.1</td>
+              </tr>
+              <tr>
+                <td>Yahoo.com</td>
+                <td>200</td>
+                <td>GET</td>
+                <td>8.8.8.8</td>
+                <td>20ms</td>
+                <td>HTTP 1.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-bg">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+              </div>
 
-            <div class="modal-textarea">
-              <h4 style="margin-bottom: 1rem;">Extracted Unique Domains</h4>
-              <textarea id="uniqueUrls" readonly></textarea><br />
-            </div>
-            <div class="modal-dim">
-              <!-- <span class="close">&times;</span> -->
-              <p id="modal-message" style="margin-bottom: 1.2rem; font-size: .8rem;">✅ la Domains copied to clipboard!</p>
+              <div class="modal-textarea">
+                <h4 style="margin-bottom: 1rem">
+                  Extracted Unique Domains
+                </h4>
+                <textarea id="uniqueUrls" readonly></textarea><br />
+              </div>
+              <div class="modal-dim">
+                <!-- <span class="close">&times;</span> -->
+                <p id="modal-message" style="margin-bottom: 1.2rem; font-size: 0.8rem">
+                  ✅ la Domains copied to clipboard!
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
+
+    <div class="mid-svg" id="mid-svg">
+      <svg id="svg-middle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #fff;
+            }
+
+            .cls-2 {
+              fill: #6c63ff;
+            }
+          </style>
+        </defs>
+        <g id="Layer_2" data-name="Layer 2">
+          <g id="turbine">
+            <polygon id="bar" class="cls-1" points="108.08 555.1 84.42 555.1 91.94 117.59 100.56 117.59 108.08 555.1" />
+            <g id="blade">
+              <circle class="cls-2" cx="96.58" cy="114.4" r="5.75" />
+              <path class="cls-1"
+                d="M104.93,82.41c-.56,3-2.41,9.36-8.39,9.18a8.38,8.38,0,0,1-8-8.67l1.72-62.13L90.83.53s3-5.61,5.89,19.52v.1l8.16,59.57A6,6,0,0,1,104.93,82.41Z" />
+              <path class="cls-2" d="M100.94,94.09v13.17H92.18V94.37A11.47,11.47,0,0,1,100.94,94.09Z" />
+              <path class="cls-2" d="M96.81,20.19a7.53,7.53,0,0,0-6.49.65L90.88.58s3-5.61,5.89,19.52Z" />
+              <path class="cls-1"
+                d="M64.83,123.25c2.87-1,9.27-2.6,12.14,2.64a8.34,8.34,0,0,1-3.52,11.22L18.79,166.69.94,176.33s-6.35.24,14-14.88l.09,0,47.52-36.86A8.66,8.66,0,0,1,64.83,123.25Z" />
+              <path class="cls-2" d="M76.88,120.89l11.4-6.59,4.41,7.61-11.17,6.44A12,12,0,0,1,76.88,120.89Z" />
+              <path class="cls-2" d="M15,161.41a7.43,7.43,0,0,0,3.8,5.28L.94,176.33s-6.35.24,14-14.88Z" />
+              <path class="cls-1"
+                d="M120.23,137.58c-2.32-2-6.91-6.77-3.76-11.87a8.34,8.34,0,0,1,11.5-2.55l52.94,32.54,17.25,10.62s3.38,5.38-19.84-4.64l-.1,0-55.68-22.72A7.67,7.67,0,0,1,120.23,137.58Z" />
+              <path class="cls-2" d="M112.16,128.3l-11.4-6.58,4.4-7.6,11.17,6.44A11.88,11.88,0,0,1,112.16,128.3Z" />
+              <path class="cls-2" d="M178.18,161.68a7.47,7.47,0,0,0,2.69-5.93l17.24,10.62s3.39,5.37-19.84-4.64Z" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
   </div>
+  <div class="footer">
+    <p>©️ Mehbub Alam 2025</p>
+  </div>
+  <svg id="svg-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #fff;
+        }
+
+        .cls-2 {
+          fill: #6c63ff;
+        }
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="turbine">
+        <polygon id="bar" class="cls-1" points="108.08 555.1 84.42 555.1 91.94 117.59 100.56 117.59 108.08 555.1" />
+        <g id="blade">
+          <circle class="cls-2" cx="96.58" cy="114.4" r="5.75" />
+          <path class="cls-1"
+            d="M104.93,82.41c-.56,3-2.41,9.36-8.39,9.18a8.38,8.38,0,0,1-8-8.67l1.72-62.13L90.83.53s3-5.61,5.89,19.52v.1l8.16,59.57A6,6,0,0,1,104.93,82.41Z" />
+          <path class="cls-2" d="M100.94,94.09v13.17H92.18V94.37A11.47,11.47,0,0,1,100.94,94.09Z" />
+          <path class="cls-2" d="M96.81,20.19a7.53,7.53,0,0,0-6.49.65L90.88.58s3-5.61,5.89,19.52Z" />
+          <path class="cls-1"
+            d="M64.83,123.25c2.87-1,9.27-2.6,12.14,2.64a8.34,8.34,0,0,1-3.52,11.22L18.79,166.69.94,176.33s-6.35.24,14-14.88l.09,0,47.52-36.86A8.66,8.66,0,0,1,64.83,123.25Z" />
+          <path class="cls-2" d="M76.88,120.89l11.4-6.59,4.41,7.61-11.17,6.44A12,12,0,0,1,76.88,120.89Z" />
+          <path class="cls-2" d="M15,161.41a7.43,7.43,0,0,0,3.8,5.28L.94,176.33s-6.35.24,14-14.88Z" />
+          <path class="cls-1"
+            d="M120.23,137.58c-2.32-2-6.91-6.77-3.76-11.87a8.34,8.34,0,0,1,11.5-2.55l52.94,32.54,17.25,10.62s3.38,5.38-19.84-4.64l-.1,0-55.68-22.72A7.67,7.67,0,0,1,120.23,137.58Z" />
+          <path class="cls-2" d="M112.16,128.3l-11.4-6.58,4.4-7.6,11.17,6.44A11.88,11.88,0,0,1,112.16,128.3Z" />
+          <path class="cls-2" d="M178.18,161.68a7.47,7.47,0,0,0,2.69-5.93l17.24,10.62s3.39,5.37-19.84-4.64Z" />
+        </g>
+      </g>
+    </g>
+  </svg>
+
+  <svg id="svg-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #fff;
+        }
+
+        .cls-2 {
+          fill: #6c63ff;
+        }
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="turbine">
+        <polygon id="bar" class="cls-1" points="108.08 555.1 84.42 555.1 91.94 117.59 100.56 117.59 108.08 555.1" />
+        <g id="blade">
+          <circle class="cls-2" cx="96.58" cy="114.4" r="5.75" />
+          <path class="cls-1"
+            d="M104.93,82.41c-.56,3-2.41,9.36-8.39,9.18a8.38,8.38,0,0,1-8-8.67l1.72-62.13L90.83.53s3-5.61,5.89,19.52v.1l8.16,59.57A6,6,0,0,1,104.93,82.41Z" />
+          <path class="cls-2" d="M100.94,94.09v13.17H92.18V94.37A11.47,11.47,0,0,1,100.94,94.09Z" />
+          <path class="cls-2" d="M96.81,20.19a7.53,7.53,0,0,0-6.49.65L90.88.58s3-5.61,5.89,19.52Z" />
+          <path class="cls-1"
+            d="M64.83,123.25c2.87-1,9.27-2.6,12.14,2.64a8.34,8.34,0,0,1-3.52,11.22L18.79,166.69.94,176.33s-6.35.24,14-14.88l.09,0,47.52-36.86A8.66,8.66,0,0,1,64.83,123.25Z" />
+          <path class="cls-2" d="M76.88,120.89l11.4-6.59,4.41,7.61-11.17,6.44A12,12,0,0,1,76.88,120.89Z" />
+          <path class="cls-2" d="M15,161.41a7.43,7.43,0,0,0,3.8,5.28L.94,176.33s-6.35.24,14-14.88Z" />
+          <path class="cls-1"
+            d="M120.23,137.58c-2.32-2-6.91-6.77-3.76-11.87a8.34,8.34,0,0,1,11.5-2.55l52.94,32.54,17.25,10.62s3.38,5.38-19.84-4.64l-.1,0-55.68-22.72A7.67,7.67,0,0,1,120.23,137.58Z" />
+          <path class="cls-2" d="M112.16,128.3l-11.4-6.58,4.4-7.6,11.17,6.44A11.88,11.88,0,0,1,112.16,128.3Z" />
+          <path class="cls-2" d="M178.18,161.68a7.47,7.47,0,0,0,2.69-5.93l17.24,10.62s3.39,5.37-19.84-4.64Z" />
+        </g>
+      </g>
+    </g>
+  </svg>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
