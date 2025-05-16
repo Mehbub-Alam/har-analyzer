@@ -414,6 +414,10 @@ h1 {
     from {
         transform: rotateZ(0deg);
     }
+    to {
+        transform: rotateZ(360deg)
+    }
+}
 
 @media only screen and (max-width: 768px) {
     #svg-left, #svg-right {
@@ -421,7 +425,3 @@ h1 {
     }
 }
 
-    to {
-        transform: rotateZ(360deg)
-    }
-}
