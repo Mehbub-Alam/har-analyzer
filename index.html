@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>NEE Har File nalyzer</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <img src="NextEra_Energy_logo.svg" alt="" srcset="" id="logo">
+    <h1>HAR File Analyzer</h1>
+    <div class="form">
+      <label for="harFileInput" class="custom-file-upload">
+        Upload HAR File
+        <input type="file" id="harFileInput" accept=".har" />
+    </div>
+    <h6 id="selected-file">No File selected</h6>
+    <div class="display-button">
+      
+    </div>
+
+    <div class="display-data">
+      <button id="btn-unique-domain" onclick="copyUrls()" disabled>Unique Domains</button>
+      <div id="uniqueUrlsBox">
+
+      </div>
+      <div id="display-table" class="display-table" style="margin-top: 2rem; display: none;">
+        <table id="myTable" class="display">
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th>Response Code</th>
+              <th>Method</th>
+              <th>Remote Address</th>
+              <th>Time</th>
+              <th>protocol</th>
+              <!-- <th>Referer</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>google.com</td>
+              <td>200</td>
+              <td>GET</td>
+              <td>8.8.8.8</td>
+              <td>20ms</td>
+              <td>HTTP 1.1</td>
+            </tr>
+            <tr>
+              <td>Yahoo.com</td>
+              <td>200</td>
+              <td>GET</td>
+              <td>8.8.8.8</td>
+              <td>20ms</td>
+              <td>HTTP 1.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <div class="modal-bg">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <span class="close">&times;</span>
+            </div>
+
+            <div class="modal-textarea">
+              <h4 style="margin-bottom: 1rem;">Extracted Unique Domains</h4>
+              <textarea id="uniqueUrls" readonly></textarea><br />
+            </div>
+            <div class="modal-dim">
+              <!-- <span class="close">&times;</span> -->
+              <p id="modal-message" style="margin-bottom: 1.2rem; font-size: .8rem;">✅ la Domains copied to clipboard!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/colresizable/colResizable-1.6.min.js"></script>
+<script src="script.js"></script>
+
+</html>

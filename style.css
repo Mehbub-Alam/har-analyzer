@@ -1,0 +1,314 @@
+* {
+    background-color: rgb(212, 215, 226);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    margin: 2rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #2F97DA;
+}
+
+#harFileInput {
+    display: none;
+}
+
+.custom-file-upload {
+    color: #2F97DA;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 2px solid #2F97DA;
+    ;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #2F97DA;
+    color: White;
+}
+
+#selected-file {
+    margin-top: .5rem;
+    color: #2F97DA;
+    font-size: .7rem;
+}
+
+#logo {
+    margin-left: 1.5rem;
+}
+
+/* The Modal (background) */
+.modal {
+    /* display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background-color: rgb(0, 0, 0) !important;
+    background-color: rgba(0, 0, 0, 1) !important;
+    box-shadow: #000; */
+
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* padding-top: 100px; */
+    top: 0;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* box-shadow: #000; */
+}
+
+.modal-bg {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 600px;
+    max-height: 80vh;
+    /* background-color: #6EC72E; */
+    padding: .4rem;
+}
+
+#uniqueUrlsBox {
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-end;
+}
+
+/* Modal Content */
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-textarea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    /* padding: 20px; */
+    min-width: 50%;
+    font-size: 1rem;
+}
+
+.modal-textarea h4 {
+    color: #2F97DA;
+}
+
+#uniqueUrls {
+    width: 100%;
+    min-height: 200px;
+    max-height: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    /* background-color: #e4e4e4; */
+    font-size: .7rem;
+    outline: none;
+}
+
+
+
+.display-button {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#btn-unique-url,
+#btn-show-table,
+#btn-unique-domain {
+    padding: .2rem;
+    border: none;
+    text-decoration: none;
+    font-size: .8rem;
+}
+
+
+#btn-unique-domain {
+    padding: .5rem;
+    border: none;
+    text-decoration: none;
+    font-size: .8rem;
+    background-color: #6EC72E;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* .btn-unique-domain-bg:hover {
+    background-color: #3f820f;
+} */
+
+#btn-unique-url:hover,
+#btn-show-table:hover {
+    cursor: pointer;
+    color: #2F97DA;
+}
+
+.display-data {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    text-align: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+#domain-header {
+    margin-bottom: .5rem;
+    margin-left: .2rem;
+    align-self: flex-start;
+    color: #2F97DA;
+    font-size: .7rem;
+}
+
+/* Scrollbar Unique Domain */
+#uniqueUrls::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+#uniqueUrls::-webkit-scrollbar-thumb {
+    background-color: #2F97DA;
+}
+
+#uniqueUrls::-webkit-scrollbar-corner {
+    background-color: #2F97DA;
+}
+
+/* Scrollbar dataTable */
+
+.display-table::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.display-table::-webkit-scrollbar:horizontal {
+    /* width: 4px; */
+    height: 8px;
+    width: 10px !important;
+}
+
+/* .display-table::-webkit-sc */
+
+.display-table::-webkit-scrollbar-thumb {
+    background-color: #2F97DA;
+}
+
+.display-table:-webkit-scrollbar-corner {
+    background-color: #2F97DA;
+}
+
+#btn-copy-url {
+    border-style: none;
+    cursor: pointer;
+    padding: .3rem .7rem .3rem .5rem;
+    font-size: .8rem;
+    align-self: flex-start;
+    background-color: #2F97DA;
+    color: white;
+}
+
+#btn-unique-domain {
+    cursor: pointer;
+}
+
+#btn-copy-url:hover {
+    background-color: #6EC72E;
+    color: white;
+}
+
+.display-table {
+    padding: 1rem;
+}
+
+/* datatables Dragable*/
+
+/* Target grips only within table header cells (th) */
+
+
+/* Hide the sorting indicator element */
+#myTable.dataTable thead .sorting::after,
+#myTable.dataTable thead .sorting_asc::after,
+#myTable.dataTable thead .sorting_desc::after,
+#myTable.dataTable thead .sorting::before,
+/* Add ::before as well */
+#myTable.dataTable thead .sorting_asc::before,
+#myTable.dataTable thead .sorting_desc::before {
+    content: "" !important;
+    visibility: hidden !important;
+    display: none !important;
+}
+
+#myTable.dataTable thead th.sorting,
+#myTable.dataTable thead th.sorting_asc,
+#myTable.dataTable thead th.sorting_desc {
+    padding-right: 10px !important;
+    /* Adjust as needed */
+}
+
+.display-table {
+    width: 80vw !important;
+    max-width: 80vw;
+    overflow: scroll;
+    max-height: 70vh;
+}
+
+.grip .dragging {
+    text-align: left;
+}
+
+#myTable.dataTable {
+    font-size: .7rem;
+}
