@@ -9,7 +9,16 @@ document
     const file = event.target.files[0];
     if (!file) return;
     // console.log(file.name);
+
     document.getElementById("selected-file").innerHTML = "✔️" + file.name;
+
+    document.getElementById("svg-left").style.display = "none";
+    document.getElementById("svg-right").style.display = "none";
+    document.getElementById("svg-left-top").style.display = "block";
+    document.getElementById("svg-right-top").style.display = "block";
+    document.getElementById("svg-right-top").style.display = "block";
+    document.getElementById("mid-svg").style.display = "none";
+
     const reader = new FileReader();
     reader.onload = function (e) {
       const har = JSON.parse(e.target.result);
