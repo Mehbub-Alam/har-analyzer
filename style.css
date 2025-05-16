@@ -51,6 +51,7 @@
 
 #svg-middle {
     max-width: 100px;
+    opacity:50%;
 }
 
 #svg-left-top {
@@ -59,6 +60,7 @@
     bottom: 0;
     right: .5rem;
     height: 90%;
+    opacity: 50%;
 }
 
 #svg-right-top {
@@ -67,6 +69,7 @@
     bottom: 0;
     left: .5rem;
     height: 90%;
+    opacity: 50%;
 }
 
 
