@@ -415,6 +415,12 @@ h1 {
         transform: rotateZ(0deg);
     }
 
+@media only screen and (max-width: 768px) {
+    #svg-left, #svg-right {
+        display: none;
+    }
+}
+
     to {
         transform: rotateZ(360deg)
     }
