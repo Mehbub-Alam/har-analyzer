@@ -7,9 +7,69 @@
 }
 
 .wrapper {
-    margin: 2rem;
+    text-align: center;
+    /* padding-top: 2rem; */
+    min-height: 96vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    max-height: 4vh;
     text-align: center;
 }
+
+
+
+.mid-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+
+.display-header {
+    padding-top: 2rem;
+}
+
+.svg-top-left {
+    position: relative;
+    align-items: right;
+}
+
+.svg-top-right {
+    position: relative;
+    align-items: right;
+}
+
+#svg-middle {
+    max-width: 100px;
+}
+
+#svg-left-top {
+    position: absolute;
+    /* max-width: 25%; */
+    bottom: 0;
+    right: .5rem;
+    height: 90%;
+}
+
+#svg-right-top {
+    position: absolute;
+    /* max-width: 25%; */
+    bottom: 0;
+    left: .5rem;
+    height: 90%;
+}
+
+
 
 h1 {
     text-align: center;
@@ -174,6 +234,7 @@ h1 {
 
 #btn-unique-domain {
     padding: .5rem;
+    margin-top: 1.5rem;
     border: none;
     text-decoration: none;
     font-size: .8rem;
@@ -198,7 +259,7 @@ h1 {
     display: flex;
     width: 100%;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-top: 1rem;
     text-align: center;
     align-items: center;
@@ -311,4 +372,47 @@ h1 {
 
 #myTable.dataTable {
     font-size: .7rem;
+}
+
+
+/* SVG animation */
+
+#svg-left {
+    position: absolute;
+    margin-left: 2rem;
+    z-index: 12;
+    bottom: 0;
+    left: 0;
+    height: 90%;
+    background-color: unset;
+    opacity: 50%;
+}
+
+#svg-right {
+    position: absolute;
+    z-index: 21 !important;
+    bottom: 0;
+    right: 0;
+    margin-right: 3rem;
+    height: 90%;
+    background-color: unset;
+    opacity: 50%;
+}
+
+
+
+#blade {
+    animation: blades 3s infinite linear;
+    transform-origin: 97px 114px;
+    transform-box: border-box;
+}
+
+@keyframes blades {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg)
+    }
 }
