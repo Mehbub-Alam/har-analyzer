@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Har File Analyzer</title>
+  <title>NEE Har File nalyzer</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <div class="mid-container">
       <div class="header-container">
         <div class="svg-top-left">
-          <svg id="svg-left-top" style="display: none;"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+          <svg id="svg-left-top" style="display: none;" viewBox="0 0 198.33 555.09">
             <defs>
               <style>
                 .cls-1 {
@@ -51,7 +51,8 @@
           </svg>
         </div>
         <div class="display-header">
-          <img src="NextEra_Energy_logo.svg" alt="" srcset="" id="logo">
+          <img onClick="window.location.reload()" src="logo.svg" alt="" srcset="" id="logo"
+            style="cursor: pointer;">
           <h1>HAR File Analyzer</h1>
           <div class="form">
             <label for="harFileInput" class="custom-file-upload">
@@ -59,13 +60,56 @@
               <input type="file" id="harFileInput" accept=".har" />
           </div>
           <h6 id="selected-file">No File selected</h6>
-          <button id="btn-unique-domain" onclick="copyUrls()" disabled>Unique Domains</button>
+          <button id="btn-unique-domain" onclick="copyUrls()" disabled style="display: none;">Unique Domains</button>
+          <button id="btn-redirect" style="display: none;">Zscaler 307 Redirects</button>
           <div id="uniqueUrlsBox">
 
           </div>
+          <div id="redirectModal">
+            <div id="redirectBoxContainer" >
+
+            <div id="redirectBoxWrapper">
+
+              <div class="redirectHeader">
+                <div class="redirect-title">
+                  <h4 id="redirect-comment">Zscaler Redirects</h4>
+                </div>
+                <span id="closeRedirectBox">&times;</span>
+              </div>
+              <div id="redirectBox">
+                <table id="redirect-table">
+                  <thead>
+                    <tr>
+                      <th>Domain</th>
+                      <th>Response Code</th>
+                      <th>Location</th>
+                      <th>Referer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Google.com</th>
+                      <th>307</th>
+                      <th>Zscalerthree.net</th>
+                      <th>gateway.zscalerthree.net</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="redirect-footer">
+                <button id="copyRedirectedDomain" disabled >Copy Unique Domains</button>
+              </div>
+
+            </div>
+
+
+          </div>
+          </div>
+          
+
         </div>
-        <div class="svg-top-right" >
-          <svg id="svg-right-top" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+        <div class="svg-top-right">
+          <svg id="svg-right-top" style="display: none;" viewBox="0 0 198.33 555.09">
             <defs>
               <style>
                 .cls-1 {
@@ -164,7 +208,7 @@
     </div>
 
     <div class="mid-svg" id="mid-svg">
-      <svg id="svg-middle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+      <svg id="svg-middle" viewBox="0 0 198.33 555.09">
         <defs>
           <style>
             .cls-1 {
@@ -202,7 +246,7 @@
   <div class="footer">
     <p>©️ Mehbub Alam 2025</p>
   </div>
-  <svg id="svg-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+  <svg id="svg-left" viewBox="0 0 198.33 555.09">
     <defs>
       <style>
         .cls-1 {
@@ -236,7 +280,7 @@
     </g>
   </svg>
 
-  <svg id="svg-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.33 555.09">
+  <svg id="svg-right" viewBox="0 0 198.33 555.09">
     <defs>
       <style>
         .cls-1 {
