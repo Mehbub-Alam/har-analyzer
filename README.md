@@ -36,11 +36,17 @@ ________________________________________
 •	Support Teams: Provide faster root cause analysis during proxy-related escalations.
 ________________________________________
 🧠 Differentiators
-Feature	Traditional HAR Viewers	This Custom HAR Analyzer
-Domain extraction	Manual and repetitive	One-click unique extraction
-Zscaler redirect detection	Not available	Dedicated 307 redirect filter
-Network route classification	Not supported	Automatic internal vs proxy route insight
-Company-aligned design	Generic	Custom-built for our architecture
+TRADITIONAL ANALYZER:
+  Domain extraction: Manual and repetitive
+  Zscaler redirect detection: Not available
+  Network route classification: Not supported
+  Company-aligned design: Generic
+
+THIS ANALYZER:
+  Domain extraction: One-click unique extraction
+  Zscaler redirect detection: Dedicated 307 redirect filter
+  Network route classification: Automatic internal vs proxy route insight
+  Company-aligned design: Custom-built for our architecture
 ________________________________________
 🚀 Impact
 •	Reduces time spent on HAR analysis by 60–80%
