@@ -109,7 +109,7 @@ document
           },
           {
             label: "Company Network",
-            cidrs: ["155.109.0.0/16", "161.154.0.0/16", "203.0.113.10"], // Single IP allowed
+            cidrs: ["155.109.0.0/16", "161.154.0.0/16"], // Single IP allowed
           },
           {
             label: "Internal Private",
